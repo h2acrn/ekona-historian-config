@@ -5,6 +5,7 @@ import re
 from dataclasses import dataclass
 from datetime import datetime
 from pathlib import Path
+import json
 
 
 REPO_ROOT = Path(__file__).resolve().parents[1]
@@ -12,7 +13,7 @@ OI_GATEWAY_DIR = REPO_ROOT / "exports" / "oi-gateway"
 TAGS_DIR = REPO_ROOT / "exports" / "tags"
 NOTES_DIR = REPO_ROOT / "notes"
 SUMMARY_PATH = NOTES_DIR / "latest-compare-summary.md"
-
+ALIASES_PATH = REPO_ROOT / "scripts" / "compare_aliases.json"
 
 @dataclass
 class ComparisonResult:
@@ -35,7 +36,45 @@ def normalize_name(value: str) -> str:
 def pretty_sort(values: set[str]) -> list[str]:
     return sorted(values, key=lambda x: x.lower())
 
+def load_alias_config(path: Path) -> dict:
+    if not path.exists():
+        return {
+            "strip_prefixes": [],
+            "strip_suffixes": [],
+            "explicit_aliases": {}
+        }
 
+    with path.open("r", encoding="utf-8") as f:
+        return json.load(f)
+
+
+ALIAS_CONFIG = load_alias_config(ALIASES_PATH)
+
+
+def apply_alias_rules(value: str) -> str:
+    v = normalize_name(value)
+
+    explicit_aliases = {
+        normalize_name(k): normalize_name(val)
+        for k, val in ALIAS_CONFIG.get("explicit_aliases", {}).items()
+    }
+
+    if v in explicit_aliases:
+        return explicit_aliases[v]
+
+    for prefix in ALIAS_CONFIG.get("strip_prefixes", []):
+        prefix_n = normalize_name(prefix)
+        if v.startswith(prefix_n):
+            v = v[len(prefix_n):]
+            break
+
+    for suffix in ALIAS_CONFIG.get("strip_suffixes", []):
+        suffix_n = normalize_name(suffix)
+        if v.endswith(suffix_n):
+            v = v[: -len(suffix_n)]
+            break
+
+    return v
 def read_tags_file(path: Path) -> set[str]:
     tags: set[str] = set()
 
@@ -52,7 +91,7 @@ def read_tags_file(path: Path) -> set[str]:
             if i == 0 and value.lower() == "tag name":
                 continue
 
-            tags.add(normalize_name(value))
+            tags.add(apply_alias_rules(value))
 
     return tags
 
@@ -73,12 +112,12 @@ def parse_oi_gen2_or_sfr(item_path: str) -> str | None:
 
     quoted_match = re.search(r'\."([^"]+)"$', rhs)
     if quoted_match:
-        return normalize_name(quoted_match.group(1))
+        return apply_alias_rules(quoted_match.group(1))
 
     if "." in rhs:
-        return normalize_name(rhs.split(".")[-1])
+        return apply_alias_rules(rhs.split(".")[-1])
 
-    return normalize_name(rhs)
+    return apply_alias_rules(rhs)
 
 
 def parse_oi_deltav(item_path: str) -> str | None:
@@ -92,7 +131,7 @@ def parse_oi_deltav(item_path: str) -> str | None:
     if not match:
         return None
 
-    return normalize_name(match.group(1))
+    return apply_alias_rules(match.group(1))
 
 
 def parse_oi_item(pair_name: str, item_path: str) -> str | None:
@@ -326,8 +365,12 @@ def main() -> None:
 
     results: list[ComparisonResult] = []
 
+
+
     for pair_name, oi_csv, tags_csv in pairs:
         result = compare_pair(pair_name, oi_csv, tags_csv)
+        if result.tags_total <= 1:
+            print(f"WARNING: suspiciously low tag count in {result.tags_file}: {result.tags_total}")
         results.append(result)
         print_result(result)
 

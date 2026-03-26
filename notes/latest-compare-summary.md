@@ -1,12 +1,12 @@
 # Latest Compare Summary
 
-Generated: 2026-03-26 15:53:50
+Generated: 2026-03-26 16:48:02
 
 ## Overview
 
 - Compared file pairs: 3
-- Total points available in OI Gateway but missing from Tags: 22
-- Total points present in Tags but missing from OI Gateway: 44
+- Total points available in OI Gateway but missing from Tags: 15
+- Total points present in Tags but missing from OI Gateway: 27
 - Total unparsable OI Gateway rows: 0
 
 ## deltav_gen2_bms_farc
@@ -59,25 +59,22 @@ Generated: 2026-03-26 15:53:50
 - Tags file: `Tags__Gen2_PCS_LabVIEW.csv`
 - OI raw rows: 421
 - OI parsed unique: 421
-- Tags unique: 412
-- Common: 405
-- OI only: 16
-- Tags only: 7
+- Tags unique: 411
+- Common: 408
+- OI only: 13
+- Tags only: 3
 - Unparsable OI rows: 0
 
 ### Available in OI Gateway but missing from Tags
 
 - `fcv-2222`
 - `li-1488`
-- `time`
 - `xi-1660`
-- `xi-2150`
 - `xi-4550`
 - `xs-1622`
 - `xs-1642`
 - `xs-1656`
 - `xs-1660`
-- `xs-2150`
 - `xs-4515`
 - `xs-4550`
 - `xs-4812`
@@ -86,11 +83,7 @@ Generated: 2026-03-26 15:53:50
 
 ### Present in Tags but missing from OI Gateway
 
-- `pcs-systemtime`
-- `systime`
 - `ti-1513`
-- `xi-2150_1`
-- `xs-2150_1`
 - `zic-1437a`
 - `zio-1437a`
 
@@ -100,31 +93,10 @@ Generated: 2026-03-26 15:53:50
 - Tags file: `Tags__SFR_PCS_LabVIEW.csv`
 - OI raw rows: 134
 - OI parsed unique: 134
-- Tags unique: 143
-- Common: 130
-- OI only: 4
-- Tags only: 13
+- Tags unique: 134
+- Common: 134
+- OI only: 0
+- Tags only: 0
 - Unparsable OI rows: 0
 
-### Available in OI Gateway but missing from Tags
-
-- `cdiss`
-- `cpave`
-- `flametemp`
-- `qr`
-
-### Present in Tags but missing from OI Gateway
-
-- `calc_cdiss`
-- `calc_cpave`
-- `calc_flametemp`
-- `calc_qr`
-- `pt-1509_1`
-- `pt-4303_1`
-- `te-4330_1`
-- `te-4335_1`
-- `te-4336_1`
-- `te-4337_1`
-- `xs-1622_1`
-- `xs-1642_1`
-- `xs-4812_1`
+No mismatches found.

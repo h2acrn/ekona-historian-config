@@ -1,0 +1,12 @@
+{
+  "strip_prefixes": [
+    "calc_"
+  ],
+  "strip_suffixes": [
+    "_1"
+  ],
+  "explicit_aliases": {
+    "pcs-systemtime": "time",
+    "systime": "time"
+  }
+}
