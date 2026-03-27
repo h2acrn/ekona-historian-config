@@ -27,6 +27,7 @@ class ComparisonResult:
     oi_only: list[str]
     tags_only: list[str]
     unparsable_oi_items: list[str]
+    oi_item_map: dict[str, set[str]]
 
 
 def normalize_name(value: str) -> str:
@@ -147,7 +148,7 @@ def parse_oi_item(pair_name: str, item_path: str) -> str | None:
 
 
 def read_oi_gateway_file(path: Path, pair_name: str) -> tuple[set[str], int, list[str]]:
-    parsed_items: set[str] = set()
+    parsed_items: dict[str, set[str]] = {}
     unparsable: list[str] = []
     raw_count = 0
 
@@ -165,7 +166,9 @@ def read_oi_gateway_file(path: Path, pair_name: str) -> tuple[set[str], int, lis
             parsed = parse_oi_item(pair_name, raw_value)
 
             if parsed:
-                parsed_items.add(parsed)
+                if parsed not in parsed_items:
+                    parsed_items[parsed] = set()
+                parsed_items[parsed].add(raw_value)
             else:
                 unparsable.append(raw_value)
 
@@ -193,11 +196,11 @@ def pair_files(oi_dir: Path, tags_dir: Path) -> tuple[list[tuple[str, Path, Path
 
 def compare_pair(pair_name: str, oi_csv: Path, tags_csv: Path) -> ComparisonResult:
     oi_items, oi_total_raw, unparsable = read_oi_gateway_file(oi_csv, pair_name)
+    oi_keys = set(oi_items.keys())
     tags = read_tags_file(tags_csv)
-
-    oi_only = pretty_sort(oi_items - tags)
-    tags_only = pretty_sort(tags - oi_items)
-    common_count = len(oi_items & tags)
+    oi_only = pretty_sort(oi_keys - tags)
+    tags_only = pretty_sort(tags - oi_keys)
+    common_count = len(oi_keys & tags)
 
     return ComparisonResult(
         pair_name=pair_name,
@@ -210,6 +213,7 @@ def compare_pair(pair_name: str, oi_csv: Path, tags_csv: Path) -> ComparisonResu
         oi_only=oi_only,
         tags_only=tags_only,
         unparsable_oi_items=unparsable,
+        oi_item_map=oi_items,
     )
 
 
@@ -230,7 +234,9 @@ def print_result(result: ComparisonResult) -> None:
     if result.oi_only:
         print("Available in OI Gateway but missing from Tags:")
         for item in result.oi_only:
-            print(f"  - {item}")
+            paths = result.oi_item_map.get(item, [])
+            for p in paths:
+                print(f"  - {item}  ->  {p}")
         print()
 
     if result.tags_only:
@@ -311,7 +317,9 @@ def write_summary(
             lines.append("### Available in OI Gateway but missing from Tags")
             lines.append("")
             for item in result.oi_only:
-                lines.append(f"- `{item}`")
+                paths = result.oi_item_map.get(item, [])
+                for p in paths:
+                    lines.append(f"  - {item}  ->  {p}")
             lines.append("")
 
         if result.tags_only:

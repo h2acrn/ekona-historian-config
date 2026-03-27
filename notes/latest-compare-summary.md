@@ -1,6 +1,6 @@
 # Latest Compare Summary
 
-Generated: 2026-03-26 16:48:02
+Generated: 2026-03-26 17:18:02
 
 ## Overview
 
@@ -23,8 +23,12 @@ Generated: 2026-03-26 16:48:02
 
 ### Available in OI Gateway but missing from Tags
 
-- `afr_calc`
-- `b2050-bms-lt`
+  - afr_calc  ->  /DA/s=0:AFR_CALC/DO1/PV_D.CV
+  - afr_calc  ->  /DA/s=0:AFR_CALC/DO1/SP_D.CV
+  - b2050-bms-lt  ->  /DA/s=0:B2050-BMS-LT/INTERLOCK/DO1/PV_D.CV
+  - b2050-bms-lt  ->  /DA/s=0:B2050-BMS-LT/PURGE/DO1/PV_D.CV
+  - b2050-bms-lt  ->  /DA/s=0:B2050-BMS-LT/LOCKOUT/DO1/PV_D.CV
+  - b2050-bms-lt  ->  /DA/s=0:B2050-BMS-LT/FLAME_ON/DO1/PV_D.CV
 
 ### Present in Tags but missing from OI Gateway
 
@@ -67,19 +71,19 @@ Generated: 2026-03-26 16:48:02
 
 ### Available in OI Gateway but missing from Tags
 
-- `fcv-2222`
-- `li-1488`
-- `xi-1660`
-- `xi-4550`
-- `xs-1622`
-- `xs-1642`
-- `xs-1656`
-- `xs-1660`
-- `xs-4515`
-- `xs-4550`
-- `xs-4812`
-- `zic-1437`
-- `zio-1437`
+  - fcv-2222  ->  /ALIAS2/s=Gen2_PCS.FCV-2222
+  - li-1488  ->  /ALIAS2/s=Gen2_PCS.LI-1488
+  - xi-1660  ->  /ALIAS2/s=Gen2_PCS.XI-1660
+  - xi-4550  ->  /ALIAS2/s=Gen2_PCS.XI-4550
+  - xs-1622  ->  /ALIAS2/s=Gen2_PCS.XS-1622
+  - xs-1642  ->  /ALIAS2/s=Gen2_PCS.XS-1642
+  - xs-1656  ->  /ALIAS2/s=Gen2_PCS.XS-1656
+  - xs-1660  ->  /ALIAS2/s=Gen2_PCS.XS-1660
+  - xs-4515  ->  /ALIAS2/s=Gen2_PCS.XS-4515
+  - xs-4550  ->  /ALIAS2/s=Gen2_PCS.XS-4550
+  - xs-4812  ->  /ALIAS2/s=Gen2_PCS.XS-4812
+  - zic-1437  ->  /ALIAS2/s=Gen2_PCS.ZIC-1437
+  - zio-1437  ->  /ALIAS2/s=Gen2_PCS.ZIO-1437
 
 ### Present in Tags but missing from OI Gateway
 
