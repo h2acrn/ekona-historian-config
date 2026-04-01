@@ -1,11 +1,11 @@
 # Latest Compare Summary
 
-Generated: 2026-04-01 10:50:21
+Generated: 2026-04-01 11:35:50
 
 ## Overview
 
 - Compared file pairs: 3
-- Total points available in OI Gateway but missing from Tags: 14
+- Total points available in OI Gateway but missing from Tags: 2
 - Total points present in Tags but missing from OI Gateway: 24
 - Total unparsable OI Gateway rows: 0
 
@@ -26,8 +26,8 @@ Generated: 2026-04-01 10:50:21
   - afr_calc  ->  /DA/s=0:AFR_CALC/DO1/PV_D.CV
   - afr_calc  ->  /DA/s=0:AFR_CALC/DO1/SP_D.CV
   - b2050-bms-lt  ->  /DA/s=0:B2050-BMS-LT/FLAME_ON/DO1/PV_D.CV
-  - b2050-bms-lt  ->  /DA/s=0:B2050-BMS-LT/INTERLOCK/DO1/PV_D.CV
   - b2050-bms-lt  ->  /DA/s=0:B2050-BMS-LT/PURGE/DO1/PV_D.CV
+  - b2050-bms-lt  ->  /DA/s=0:B2050-BMS-LT/INTERLOCK/DO1/PV_D.CV
   - b2050-bms-lt  ->  /DA/s=0:B2050-BMS-LT/LOCKOUT/DO1/PV_D.CV
 
 ### Present in Tags but missing from OI Gateway
@@ -63,26 +63,13 @@ Generated: 2026-04-01 10:50:21
 - Tags file: `Tags__Gen2_PCS_LabVIEW.csv`
 - OI raw rows: 421
 - OI parsed unique: 421
-- Tags unique: 421
-- Common: 409
-- OI only: 12
+- Tags unique: 433
+- Common: 421
+- OI only: 0
 - Tags only: 0
 - Unparsable OI rows: 0
 
-### Available in OI Gateway but missing from Tags
-
-  - pi-1474  ->  /ALIAS2/s=Gen2_PCS.PI-1474
-  - ti-1513  ->  /ALIAS2/s=Gen2_PCS.TI-1513
-  - ti-2114  ->  /ALIAS2/s=Gen2_PCS.TI-2114
-  - ti-4324  ->  /ALIAS2/s=Gen2_PCS.TI-4324
-  - xi-4813  ->  /ALIAS2/s=Gen2_PCS.XI-4813
-  - xs-1656  ->  /ALIAS2/s=Gen2_PCS.XS-1656
-  - xv-1464  ->  /ALIAS2/s=Gen2_PCS.XV-1464
-  - xv-1581a  ->  /ALIAS2/s=Gen2_PCS.XV-1581A
-  - xv-3312a  ->  /ALIAS2/s=Gen2_PCS.XV-3312A
-  - zic-1464  ->  /ALIAS2/s=Gen2_PCS.ZIC-1464
-  - zio-1464  ->  /ALIAS2/s=Gen2_PCS.ZIO-1464
-  - zss-2211  ->  /ALIAS2/s=Gen2_PCS.ZSS-2211
+No mismatches found.
 
 ## sfr_pcs_labview
 
