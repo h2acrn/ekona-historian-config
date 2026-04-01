@@ -1,4 +1,4 @@
-﻿:(Mode)update
+:(Mode)update
 :(Version)2
 :(IODriver)ComputerName	AltComputerName	StoreForwardMode	StoreForwardPath	MinMBThreshold	Enabled	StoreForwardDuration	AutonomousStartupTimeout	BufferCount	FileChunkSize	ForwardingDelay	ConnectionTimeout	CompressionEnabled	TCPPort	IntegratedSecurity	ConnectionDetails
 $local		Off		16	Yes	180	60	128	65536	0	60	False	32565	True

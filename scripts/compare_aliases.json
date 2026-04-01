@@ -3,7 +3,9 @@
     "calc_"
   ],
   "strip_suffixes": [
-    "_1"
+    "_1",
+    "-g2"
+
   ],
   "explicit_aliases": {
     "pcs-systemtime": "time",

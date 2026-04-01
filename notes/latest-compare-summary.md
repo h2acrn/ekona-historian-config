@@ -1,12 +1,12 @@
 # Latest Compare Summary
 
-Generated: 2026-03-26 17:18:02
+Generated: 2026-03-30 16:44:53
 
 ## Overview
 
 - Compared file pairs: 3
-- Total points available in OI Gateway but missing from Tags: 15
-- Total points present in Tags but missing from OI Gateway: 27
+- Total points available in OI Gateway but missing from Tags: 14
+- Total points present in Tags but missing from OI Gateway: 36
 - Total unparsable OI Gateway rows: 0
 
 ## deltav_gen2_bms_farc
@@ -26,9 +26,9 @@ Generated: 2026-03-26 17:18:02
   - afr_calc  ->  /DA/s=0:AFR_CALC/DO1/PV_D.CV
   - afr_calc  ->  /DA/s=0:AFR_CALC/DO1/SP_D.CV
   - b2050-bms-lt  ->  /DA/s=0:B2050-BMS-LT/INTERLOCK/DO1/PV_D.CV
+  - b2050-bms-lt  ->  /DA/s=0:B2050-BMS-LT/FLAME_ON/DO1/PV_D.CV
   - b2050-bms-lt  ->  /DA/s=0:B2050-BMS-LT/PURGE/DO1/PV_D.CV
   - b2050-bms-lt  ->  /DA/s=0:B2050-BMS-LT/LOCKOUT/DO1/PV_D.CV
-  - b2050-bms-lt  ->  /DA/s=0:B2050-BMS-LT/FLAME_ON/DO1/PV_D.CV
 
 ### Present in Tags but missing from OI Gateway
 
@@ -63,33 +63,41 @@ Generated: 2026-03-26 17:18:02
 - Tags file: `Tags__Gen2_PCS_LabVIEW.csv`
 - OI raw rows: 421
 - OI parsed unique: 421
-- Tags unique: 411
-- Common: 408
-- OI only: 13
-- Tags only: 3
+- Tags unique: 421
+- Common: 409
+- OI only: 12
+- Tags only: 12
 - Unparsable OI rows: 0
 
 ### Available in OI Gateway but missing from Tags
 
-  - fcv-2222  ->  /ALIAS2/s=Gen2_PCS.FCV-2222
-  - li-1488  ->  /ALIAS2/s=Gen2_PCS.LI-1488
-  - xi-1660  ->  /ALIAS2/s=Gen2_PCS.XI-1660
-  - xi-4550  ->  /ALIAS2/s=Gen2_PCS.XI-4550
-  - xs-1622  ->  /ALIAS2/s=Gen2_PCS.XS-1622
-  - xs-1642  ->  /ALIAS2/s=Gen2_PCS.XS-1642
+  - pi-1474  ->  /ALIAS2/s=Gen2_PCS.PI-1474
+  - ti-1513  ->  /ALIAS2/s=Gen2_PCS.TI-1513
+  - ti-2114  ->  /ALIAS2/s=Gen2_PCS.TI-2114
+  - ti-4324  ->  /ALIAS2/s=Gen2_PCS.TI-4324
+  - xi-4813  ->  /ALIAS2/s=Gen2_PCS.XI-4813
   - xs-1656  ->  /ALIAS2/s=Gen2_PCS.XS-1656
-  - xs-1660  ->  /ALIAS2/s=Gen2_PCS.XS-1660
-  - xs-4515  ->  /ALIAS2/s=Gen2_PCS.XS-4515
-  - xs-4550  ->  /ALIAS2/s=Gen2_PCS.XS-4550
-  - xs-4812  ->  /ALIAS2/s=Gen2_PCS.XS-4812
-  - zic-1437  ->  /ALIAS2/s=Gen2_PCS.ZIC-1437
-  - zio-1437  ->  /ALIAS2/s=Gen2_PCS.ZIO-1437
+  - xv-1464  ->  /ALIAS2/s=Gen2_PCS.XV-1464
+  - xv-1581a  ->  /ALIAS2/s=Gen2_PCS.XV-1581A
+  - xv-3312a  ->  /ALIAS2/s=Gen2_PCS.XV-3312A
+  - zic-1464  ->  /ALIAS2/s=Gen2_PCS.ZIC-1464
+  - zio-1464  ->  /ALIAS2/s=Gen2_PCS.ZIO-1464
+  - zss-2211  ->  /ALIAS2/s=Gen2_PCS.ZSS-2211
 
 ### Present in Tags but missing from OI Gateway
 
-- `ti-1513`
-- `zic-1437a`
-- `zio-1437a`
+- `pi-2205`
+- `xs-4656`
+- `xv-1470`
+- `xv-1581`
+- `xv-3312`
+- `xyc-2211`
+- `xyo-2211`
+- `zic-1470`
+- `zic-2211`
+- `zio-1470`
+- `zio-2211`
+- `zsr-2211`
 
 ## sfr_pcs_labview
 

@@ -146,6 +146,12 @@ Tags should represent states that may need to be referenced later.
 
 ---
 
+## Quick Run
+
+```powershell
+powershell -ExecutionPolicy Bypass -File .\scripts\normalize_exports.ps1
+python .\scripts\compare_exports.py
+
 ## Ownership
 
 Suggested owner:
