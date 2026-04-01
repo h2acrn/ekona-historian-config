@@ -50,7 +50,20 @@ def load_alias_config(path: Path) -> dict:
 
 
 ALIAS_CONFIG = load_alias_config(ALIASES_PATH)
+IGNORE_PATH = REPO_ROOT / "scripts" / "compare_ignore.json"
 
+
+def load_ignore_config(path: Path) -> set[str]:
+    if not path.exists():
+        return set()
+
+    with path.open("r", encoding="utf-8") as f:
+        data = json.load(f)
+
+    return set(normalize_name(x) for x in data.get("ignore_tags", []))
+
+
+IGNORE_TAGS = load_ignore_config(IGNORE_PATH)
 
 def apply_alias_rules(value: str) -> str:
     v = normalize_name(value)
@@ -198,9 +211,14 @@ def compare_pair(pair_name: str, oi_csv: Path, tags_csv: Path) -> ComparisonResu
     oi_items, oi_total_raw, unparsable = read_oi_gateway_file(oi_csv, pair_name)
     oi_keys = set(oi_items.keys())
     tags = read_tags_file(tags_csv)
-    oi_only = pretty_sort(oi_keys - tags)
-    tags_only = pretty_sort(tags - oi_keys)
-    common_count = len(oi_keys & tags)
+    oi_only = pretty_sort((oi_keys - tags) - IGNORE_TAGS)
+    tags_only = pretty_sort((tags - oi_keys) - IGNORE_TAGS)
+    oi_keys_filtered = oi_keys - IGNORE_TAGS
+    tags_filtered = tags - IGNORE_TAGS
+
+    oi_only = pretty_sort(oi_keys_filtered - tags_filtered)
+    tags_only = pretty_sort(tags_filtered - oi_keys_filtered)
+    common_count = len(oi_keys_filtered & tags_filtered)
 
     return ComparisonResult(
         pair_name=pair_name,

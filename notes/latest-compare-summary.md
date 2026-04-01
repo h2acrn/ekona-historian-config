@@ -1,12 +1,12 @@
 # Latest Compare Summary
 
-Generated: 2026-03-30 16:44:53
+Generated: 2026-04-01 10:50:21
 
 ## Overview
 
 - Compared file pairs: 3
 - Total points available in OI Gateway but missing from Tags: 14
-- Total points present in Tags but missing from OI Gateway: 36
+- Total points present in Tags but missing from OI Gateway: 24
 - Total unparsable OI Gateway rows: 0
 
 ## deltav_gen2_bms_farc
@@ -25,8 +25,8 @@ Generated: 2026-03-30 16:44:53
 
   - afr_calc  ->  /DA/s=0:AFR_CALC/DO1/PV_D.CV
   - afr_calc  ->  /DA/s=0:AFR_CALC/DO1/SP_D.CV
-  - b2050-bms-lt  ->  /DA/s=0:B2050-BMS-LT/INTERLOCK/DO1/PV_D.CV
   - b2050-bms-lt  ->  /DA/s=0:B2050-BMS-LT/FLAME_ON/DO1/PV_D.CV
+  - b2050-bms-lt  ->  /DA/s=0:B2050-BMS-LT/INTERLOCK/DO1/PV_D.CV
   - b2050-bms-lt  ->  /DA/s=0:B2050-BMS-LT/PURGE/DO1/PV_D.CV
   - b2050-bms-lt  ->  /DA/s=0:B2050-BMS-LT/LOCKOUT/DO1/PV_D.CV
 
@@ -66,7 +66,7 @@ Generated: 2026-03-30 16:44:53
 - Tags unique: 421
 - Common: 409
 - OI only: 12
-- Tags only: 12
+- Tags only: 0
 - Unparsable OI rows: 0
 
 ### Available in OI Gateway but missing from Tags
@@ -83,21 +83,6 @@ Generated: 2026-03-30 16:44:53
   - zic-1464  ->  /ALIAS2/s=Gen2_PCS.ZIC-1464
   - zio-1464  ->  /ALIAS2/s=Gen2_PCS.ZIO-1464
   - zss-2211  ->  /ALIAS2/s=Gen2_PCS.ZSS-2211
-
-### Present in Tags but missing from OI Gateway
-
-- `pi-2205`
-- `xs-4656`
-- `xv-1470`
-- `xv-1581`
-- `xv-3312`
-- `xyc-2211`
-- `xyo-2211`
-- `zic-1470`
-- `zic-2211`
-- `zio-1470`
-- `zio-2211`
-- `zsr-2211`
 
 ## sfr_pcs_labview
 
