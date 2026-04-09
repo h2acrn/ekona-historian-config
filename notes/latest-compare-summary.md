@@ -1,11 +1,11 @@
 # Latest Compare Summary
 
-Generated: 2026-04-01 11:35:50
+Generated: 2026-04-08 11:58:54
 
 ## Overview
 
 - Compared file pairs: 3
-- Total points available in OI Gateway but missing from Tags: 2
+- Total points available in OI Gateway but missing from Tags: 14
 - Total points present in Tags but missing from OI Gateway: 24
 - Total unparsable OI Gateway rows: 0
 
@@ -23,12 +23,12 @@ Generated: 2026-04-01 11:35:50
 
 ### Available in OI Gateway but missing from Tags
 
-  - afr_calc  ->  /DA/s=0:AFR_CALC/DO1/PV_D.CV
   - afr_calc  ->  /DA/s=0:AFR_CALC/DO1/SP_D.CV
-  - b2050-bms-lt  ->  /DA/s=0:B2050-BMS-LT/FLAME_ON/DO1/PV_D.CV
+  - afr_calc  ->  /DA/s=0:AFR_CALC/DO1/PV_D.CV
   - b2050-bms-lt  ->  /DA/s=0:B2050-BMS-LT/PURGE/DO1/PV_D.CV
-  - b2050-bms-lt  ->  /DA/s=0:B2050-BMS-LT/INTERLOCK/DO1/PV_D.CV
+  - b2050-bms-lt  ->  /DA/s=0:B2050-BMS-LT/FLAME_ON/DO1/PV_D.CV
   - b2050-bms-lt  ->  /DA/s=0:B2050-BMS-LT/LOCKOUT/DO1/PV_D.CV
+  - b2050-bms-lt  ->  /DA/s=0:B2050-BMS-LT/INTERLOCK/DO1/PV_D.CV
 
 ### Present in Tags but missing from OI Gateway
 
@@ -61,15 +61,28 @@ Generated: 2026-04-01 11:35:50
 
 - OI file: `OI_Gateway__Gen2_PCS_LabVIEW.csv`
 - Tags file: `Tags__Gen2_PCS_LabVIEW.csv`
-- OI raw rows: 421
-- OI parsed unique: 421
+- OI raw rows: 433
+- OI parsed unique: 433
 - Tags unique: 433
 - Common: 421
-- OI only: 0
+- OI only: 12
 - Tags only: 0
 - Unparsable OI rows: 0
 
-No mismatches found.
+### Available in OI Gateway but missing from Tags
+
+  - ji-4211a  ->  /ALIAS2/s=Gen2_PCS.JI-4211A
+  - ji-4211b  ->  /ALIAS2/s=Gen2_PCS.JI-4211B
+  - ji-4211c  ->  /ALIAS2/s=Gen2_PCS.JI-4211C
+  - lshh-2125  ->  /ALIAS2/s=Gen2_PCS.LSHH-2125
+  - ti-1469  ->  /ALIAS2/s=Gen2_PCS.TI-1469
+  - ti-1479  ->  /ALIAS2/s=Gen2_PCS.TI-1479
+  - xi-2111  ->  /ALIAS2/s=Gen2_PCS.XI-2111
+  - xs-2111  ->  /ALIAS2/s=Gen2_PCS.XS-2111
+  - xs-4567a  ->  /ALIAS2/s=Gen2_PCS.XS-4567A
+  - xs-4567b  ->  /ALIAS2/s=Gen2_PCS.XS-4567B
+  - xv-2209a  ->  /ALIAS2/s=Gen2_PCS.XV-2209A
+  - xv-2209b  ->  /ALIAS2/s=Gen2_PCS.XV-2209B
 
 ## sfr_pcs_labview
 
