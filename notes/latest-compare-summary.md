@@ -1,12 +1,12 @@
 # Latest Compare Summary
 
-Generated: 2026-04-09 14:07:58
+Generated: 2026-04-20 14:55:54
 
 ## Overview
 
 - Compared file pairs: 3
 - Total points available in OI Gateway but missing from Tags: 2
-- Total points present in Tags but missing from OI Gateway: 24
+- Total points present in Tags but missing from OI Gateway: 30
 - Total unparsable OI Gateway rows: 0
 
 ## deltav_gen2_bms_farc
@@ -25,10 +25,10 @@ Generated: 2026-04-09 14:07:58
 
   - afr_calc  ->  /DA/s=0:AFR_CALC/DO1/SP_D.CV
   - afr_calc  ->  /DA/s=0:AFR_CALC/DO1/PV_D.CV
-  - b2050-bms-lt  ->  /DA/s=0:B2050-BMS-LT/INTERLOCK/DO1/PV_D.CV
   - b2050-bms-lt  ->  /DA/s=0:B2050-BMS-LT/FLAME_ON/DO1/PV_D.CV
-  - b2050-bms-lt  ->  /DA/s=0:B2050-BMS-LT/PURGE/DO1/PV_D.CV
   - b2050-bms-lt  ->  /DA/s=0:B2050-BMS-LT/LOCKOUT/DO1/PV_D.CV
+  - b2050-bms-lt  ->  /DA/s=0:B2050-BMS-LT/PURGE/DO1/PV_D.CV
+  - b2050-bms-lt  ->  /DA/s=0:B2050-BMS-LT/INTERLOCK/DO1/PV_D.CV
 
 ### Present in Tags but missing from OI Gateway
 
@@ -61,15 +61,22 @@ Generated: 2026-04-09 14:07:58
 
 - OI file: `OI_Gateway__Gen2_PCS_LabVIEW.csv`
 - Tags file: `Tags__Gen2_PCS_LabVIEW.csv`
-- OI raw rows: 433
-- OI parsed unique: 433
+- OI raw rows: 427
+- OI parsed unique: 427
 - Tags unique: 445
-- Common: 433
+- Common: 427
 - OI only: 0
-- Tags only: 0
+- Tags only: 6
 - Unparsable OI rows: 0
 
-No mismatches found.
+### Present in Tags but missing from OI Gateway
+
+- `ji-4211a`
+- `ji-4211b`
+- `ji-4211c`
+- `ti-1479`
+- `xs-4567a`
+- `xs-4567b`
 
 ## sfr_pcs_labview
 
